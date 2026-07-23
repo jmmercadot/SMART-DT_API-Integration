@@ -60,3 +60,6 @@ Full architecture notes, endpoint list, API quirks, and troubleshooting live in
 Operator-facing troubleshooting documentation lives in
 [frontend/public/issues/](frontend/public/issues/) (`issues.json` + images) — see its
 README for the format. The dashboard renders it directly; no code changes needed.
+
+For this above ^
+I am currently working on a new panel that would offer troubleshooting advice for the end-user when executing orders on the SIF-400 (for there are a lot of them)
