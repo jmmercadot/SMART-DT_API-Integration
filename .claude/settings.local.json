@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./venv/Scripts/python.exe -m pip install -q requests)",
+      "Bash(./venv/Scripts/python.exe -c \"import flask, flask_cors, requests; print\\('deps OK'\\)\")",
+      "Bash(./venv/Scripts/python.exe mock_sifmes_api.py)",
+      "Bash(curl -s -m 5 \"http://localhost:8199/api/checker\")",
+      "Bash(curl -s -m 5 \"http://localhost:8199/api/ekanban\")",
+      "Bash(SIF400_API_BASE=http://localhost:8199/api ./venv/Scripts/python.exe app.py)",
+      "Bash(curl -s -m 5 \"http://localhost:5001/api/current-status\")",
+      "Bash(curl -s -m 5 \"http://localhost:5001/api/alerts\")",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5001 -State Listen | ForEach-Object { $p = Get-Process -Id $_.OwningProcess; \"$\\($_.OwningProcess\\)  $\\($p.ProcessName\\)  $\\($p.Path\\)  started $\\($p.StartTime\\)\" } | Select-Object -Unique)",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s -m 5 \"http://localhost:5001/api/ekanban\")",
+      "Bash(curl -s -m 5 \"http://localhost:5001/api/inventory\")",
+      "PowerShell($p = Get-Process -Id 11588; \"PID 11588 started $\\($p.StartTime\\)\"; \\(Get-CimInstance Win32_Process -Filter \"ProcessId = 11588\"\\).CommandLine)"
+    ]
+  }
+}

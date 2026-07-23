@@ -1,0 +1,18 @@
+{
+  "_comment": "Common issues & troubleshooting per station. Edit freely - the future Issues panel will render this file directly, no code changes needed. See README.md in this folder for the format.",
+  "SIF-401": [
+    {
+      "title": "Loader not feeding containers (example entry - replace me)",
+      "symptoms": "Alert says a container loader has no containers even though it is stocked.",
+      "steps": [
+        "Check that canisters are seated flat in the loader.",
+        "Press the bottommost canister against the wall of the loader.",
+        "If the alert persists, remove and restack the canisters."
+      ],
+      "image": "issues/img/example-loader.jpg"
+    }
+  ],
+  "SIF-402": [],
+  "SIF-405": [],
+  "SIF-407": []
+}

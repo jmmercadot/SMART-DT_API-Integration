@@ -1,0 +1,5 @@
+﻿URL: http://130.130.130.199/api/warehouseStatus?stationTypeId=406
+STATUS: 200
+CONTENT-TYPE: application/json; charset=utf-8
+BODY:
+{"Success":false,"Error":"There is no SIF-406 configured on Physical Layout","Object":null}

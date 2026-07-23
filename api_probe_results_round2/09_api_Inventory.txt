@@ -1,0 +1,5 @@
+﻿URL: http://130.130.130.199/api/Inventory
+STATUS: 200
+CONTENT-TYPE: application/json; charset=utf-8
+BODY:
+{"Success":true,"Error":null,"Object":{"Stations":[{"StationID":1,"StationTypeID":401,"ContainerLoaders":[{"LoaderNumber":1,"ContainerType":"Square","Presence":true,"Minimum":true},{"LoaderNumber":2,"ContainerType":"Square","Presence":true,"Minimum":true},{"LoaderNumber":3,"ContainerType":"Square","Presence":true,"Minimum":true},{"LoaderNumber":4,"ContainerType":"Round","Presence":false,"Minimum":true},{"LoaderNumber":5,"ContainerType":"Round","Presence":true,"Minimum":true}],"PalletLoader":{"Position":"c0","Presence":true,"Minimum":true}},{"StationID":2,"StationTypeID":402,"Hoppers":[{"HopperNumber":1,"Color":"Blue","Presence":true,"Minimum":true},{"HopperNumber":2,"Color":"Yellow","Presence":true,"Minimum":true},{"HopperNumber":3,"Color":"Red","Presence":true,"Minimum":true}]},{"StationID":3,"StationTypeID":405,"Feeders":[{"FeederNumber":1,"CapType":"Round","CapCount":8},{"FeederNumber":2,"CapType":"Square","CapCount":9}]}]}}

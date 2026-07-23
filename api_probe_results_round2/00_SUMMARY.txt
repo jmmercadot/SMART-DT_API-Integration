@@ -1,0 +1,22 @@
+﻿SIF-400 API probe round 2 - 07/15/2026 13:00:51
+Base: http://130.130.130.199
+PA date range: 07/01/2026 to 07/15/2026
+
+STATUS  PATH
+------  ----
+200  /api/Help/Api/GET-Checker  (text/html; charset=utf-8)
+200  /api/Help/Api/GET-Ekanban  (text/html; charset=utf-8)
+200  /api/Help/Api/GET-Inventory  (text/html; charset=utf-8)
+200  /api/Help/Api/GET-PerformanceAnalytics_paOption_from_to  (text/html; charset=utf-8)
+200  /api/Help/Api/GET-DatabaseConnection  (text/html; charset=utf-8)
+200  /api/Help/Api/GET-WarehouseStatus_stationTypeId  (text/html; charset=utf-8)
+200  /api/checker  (application/json; charset=utf-8)
+200  /api/ekanban  (application/json; charset=utf-8)
+200  /api/Inventory  (application/json; charset=utf-8)
+200  /api/warehouseStatus?stationTypeId=406  (application/json; charset=utf-8)
+200  /api/performanceAnalytics?paOption=AirAndEnergy&from=07/01/2026&to=07/15/2026  (application/json; charset=utf-8)
+200  /api/performanceAnalytics?paOption=Energy&from=07/01/2026&to=07/15/2026  (application/json; charset=utf-8)
+200  /api/performanceAnalytics?paOption=Air&from=07/01/2026&to=07/15/2026  (application/json; charset=utf-8)
+200  /api/performanceAnalytics?paOption=Production&from=07/01/2026&to=07/15/2026  (application/json; charset=utf-8)
+200  /api/performanceAnalytics?paOption=OEE&from=07/01/2026&to=07/15/2026  (application/json; charset=utf-8)
+404  /api/performanceAnalytics  (The remote server returned an error: (404) Not Found.)

@@ -1,0 +1,5 @@
+﻿URL: http://130.130.130.199/api/performanceAnalytics?paOption=Production&from=07/01/2026&to=07/15/2026
+STATUS: 200
+CONTENT-TYPE: application/json; charset=utf-8
+BODY:
+{"Success":false,"Error":null,"Object":null}

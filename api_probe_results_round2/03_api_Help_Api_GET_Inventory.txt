@@ -1,0 +1,190 @@
+﻿URL: http://130.130.130.199/api/Help/Api/GET-Inventory
+STATUS: 200
+CONTENT-TYPE: text/html; charset=utf-8
+BODY:
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>GET Inventory</title>
+    <link href="/api/Content/css?v=fWfq8TKPOT-DkoDbhxC8wzp5kHg693IlGmL9So4mB8s1" rel="stylesheet"/>
+
+    <script src="/api/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/api/Content/img/Favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/api/Content/img/Favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/api/Content/img/Favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/api/Content/img/Favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/api/Content/img/Favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/api/Content/img/Favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/api/Content/img/Favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/api/Content/img/Favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/api/Content/img/Favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/api/Content/img/Favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/api/Content/img/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/api/Content/img/Favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/api/Content/img/Favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/api/Content/img/Favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/api/">SIFMES-400</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/api/Help">API</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        
+
+<link type="text/css" href="/api/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>GET Inventory</h1>
+<div>
+    <p>
+            URI example: /api/Inventory<br />
+            Allows to get the inventory of SIF-400 system. The following information is included for each station:<br />
+            SIF-401: Presence flag, minimum flag and container type for each container loader. Minimum flag, presence flag and loader position for pallet loader.<br />
+            SIF-402: Hopper presence flag, minimum flag and color type for each hopper.<br />
+            SIF-403: Minimum flag and maximum flag for water and oil tanks.<br />
+            SIF-404: Minimum flag and container type for each line.<br />
+            SIF-405: Count of caps and cap type for each feeder.<br />
+            SIF-408: Count of packs.<br />
+            SIF-410: Minimum flag of pack pallets.<br />
+            SIF-412: Count of pack pallets inside each dock.
+            </p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <p>None.</p>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p></p>
+
+        <p>None.</p>
+
+
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>Retrieve the inventory of SIF-400 system.</p>
+
+<a href="/api/Help/ResourceModel?modelName=ResponseModel" style="font-weight: bold;font-size: 17px;color: var(--AccentBaseColor);">ResponseModel</a>    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">Success</td>
+                    <td class="parameter-documentation">
+                        <p>
+            This property can be true or false depending on the result of the method
+            </p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Error</td>
+                    <td class="parameter-documentation">
+                        <p>
+            If there is any error, this property will have the information about the error.
+            </p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Object</td>
+                    <td class="parameter-documentation">
+                        <p>
+            If everything works fine, this property will have the item of expected response
+            </p>
+                    </td>
+                    <td class="parameter-type">
+                                    Object
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+{
+  &quot;Success&quot;: true,
+  &quot;Error&quot;: &quot;sample string 2&quot;,
+  &quot;Object&quot;: {}
+}
+</pre>
+        </div>
+        <h4 class="sample-header">text/html</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+{&quot;Success&quot;:true,&quot;Error&quot;:&quot;sample string 2&quot;,&quot;Object&quot;:{}}
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+        <hr />
+        <footer>
+            <p>&copy; 2026 - SIFMES-400 Api</p>
+        </footer>
+    </div>
+
+    <script src="/api/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+
+    <script src="/api/bundles/bootstrap?v=a0JlrK3HWJYO4CANWtnjZQ6r-FHTgFewh3ItuNGmfr41"></script>
+
+    
+</body>
+</html>
+

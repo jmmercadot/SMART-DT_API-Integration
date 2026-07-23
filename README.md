@@ -1,165 +1,62 @@
-# SIF-400 Digital Twin - Native Implementation
+# SIF-400 Digital Twin
 
-This is a native implementation of the SIF-400 Digital Twin system that provides real-time monitoring and analytics for power stations 401, 402, 405, and 407. The system includes voltage, current, and power monitoring with natural language query capabilities.
+A full-stack digital twin of the SIF-400 Smart Factory assembly line (SMC SIFMES-400).
+The backend polls the real SIFMES-400 web API on the lab network and the dashboard
+mirrors the line in real time: per-station energy and derived power, compressed-air
+consumption, raw-material inventory, caps e-kanban, OEE, alerts with troubleshooting
+tips, measurement history with CSV export, and a natural-language chat assistant.
 
-## Architecture
+![stack](https://img.shields.io/badge/backend-Flask%20%2B%20SQLite-blue)
+![stack](https://img.shields.io/badge/frontend-React%20%2B%20Tailwind-cyan)
 
-The system consists of two main components:
+## Quick start
 
-1. **Python Backend** (`/backend/`)
-   - Flask REST API server
-   - SQLite database for data storage
-   - Real-time data simulation
-   - Natural language processing service
-   - Alert monitoring and management
-
-2. **React Frontend** (`/frontend/`)
-   - Modern React application with Tailwind CSS
-   - Real-time dashboard with station cards
-   - Interactive chat interface
-   - Alert management system
-
-## Features
-
-- **Real-time Monitoring**: Live voltage, current, and power readings
-- **Natural Language Interface**: Ask questions about station status in plain English
-- **Alert System**: Automatic anomaly detection and alerting
-- **Trend Analysis**: Historical data visualization
-- **Station Comparison**: Compare performance across stations
-- **Responsive Design**: Works on desktop and mobile devices
-
-## Installation & Setup
-
-### Prerequisites
-
-- Python 3.8+
-- Node.js 16+
-- npm or yarn
-
-### Backend Setup
-
-1. Navigate to the backend directory:
 ```bash
+./start.sh          # starts backend (5001) + frontend (3000) against the real SIF-400
+MOCK=1 ./start.sh   # same, but against the bundled mock API (no lab network needed)
+./stop.sh           # stops everything
+```
+
+Or run the pieces manually:
+
+```bash
+# Backend (Python 3, Flask) - polls the real SIF-400 at http://130.130.130.199/api
 cd backend
-```
-
-2. Create a virtual environment (recommended):
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install Python dependencies:
-```bash
+python -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
+python app.py                                     # http://localhost:5001
 
-4. Start the backend server:
-```bash
-python app.py
-```
+# Off the lab network? Run the mock SIFMES API and point the backend at it:
+python mock_sifmes_api.py                                   # http://localhost:8199/api
+SIF400_API_BASE=http://localhost:8199/api python app.py
 
-The backend will start on `http://localhost:5001`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
+# Frontend (React)
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
+npm start                                         # http://localhost:3000
 ```
 
-3. Start the development server:
-```bash
-npm start
+## How it works
+
+```
+SIFMES-400 API  ──poll──>  collector.py  ──SQLite──>  Flask API  ──HTTP──>  React dashboard
+(real device or mock)      (2 threads)    sif400.db   (app.py)              (SIF400DigitalTwin.jsx)
 ```
 
-The frontend will start on `http://localhost:3001`
+- `backend/sif400_client.py` — HTTP client for the SIFMES-400 API and its quirks
+  (30s performanceAnalytics budget, unencoded date slashes, no same-day ranges)
+- `backend/collector.py` — background polling, power derivation from energy deltas,
+  per-feed health tracking, alert generation (inventory presence, low caps, power
+  ceiling, connection loss)
+- `backend/nlp_service.py` — chat assistant answering from the collected data
+- `backend/mock_sifmes_api.py` — faithful mock of the device API for off-network work
 
-## Usage
+Full architecture notes, endpoint list, API quirks, and troubleshooting live in
+[CLAUDE.md](CLAUDE.md). Captured samples of the real device's API responses are in
+`api_probe_results*/` and `Documentation/`.
 
-1. **Start the Backend**: Run the Python Flask server first
-2. **Start the Frontend**: Run the React development server
-3. **Access the Application**: Open your browser to `http://localhost:3001`
+## Contributing troubleshooting docs
 
-### Natural Language Queries
-
-The system supports various types of natural language queries:
-
-- **Status Overview**: "What's the current status?", "How are the stations doing?"
-- **Voltage Queries**: "Show me voltage levels", "What's the voltage of SIF-401?"
-- **Current Queries**: "What's the current reading?", "Show me amperage"
-- **Power Queries**: "What's the power consumption?", "Show me power readings"
-- **Alert Queries**: "Any alerts?", "Show me problems"
-- **Trend Analysis**: "Show me trends", "How is voltage changing?"
-- **Station Specific**: "Tell me about SIF-401", "Status of station 402"
-- **Comparisons**: "Which station has higher voltage?", "Compare the stations"
-
-## Database Schema
-
-The SQLite database contains three main tables:
-
-- **stations**: Station metadata (ID, name)
-- **measurements**: Real-time measurements (voltage, current, power, status)
-- **alerts**: System alerts and warnings
-
-## API Endpoints
-
-- `GET /api/stations` - Get all stations
-- `GET /api/stations/{id}/latest` - Get latest measurement for a station
-- `GET /api/stations/{id}/history` - Get historical data for a station
-- `GET /api/current-status` - Get current status of all stations
-- `GET /api/alerts` - Get active alerts
-- `POST /api/chat` - Process natural language queries
-
-## Monitoring Ranges
-
-- **Voltage**: Normal range 216-224V (warnings outside this range)
-- **Current**: Normal range 14.5-15.8A (warnings outside this range)
-- **Power**: Calculated as Voltage × Current
-
-## Development
-
-### Adding New Features
-
-1. **Backend**: Add new endpoints in `app.py`, extend NLP service in `nlp_service.py`
-2. **Frontend**: Modify React components in the `src/` directory
-
-### Database Management
-
-The database is automatically initialized when the backend starts. Data is persisted in `sif400.db`.
-
-### Customization
-
-- **Station Configuration**: Modify station IDs in both backend and frontend
-- **Monitoring Ranges**: Update thresholds in `app.py` and `nlp_service.py`
-- **UI Styling**: Customize appearance in React components using Tailwind CSS
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Connection Errors**: Ensure backend is running on port 5001
-2. **Database Issues**: Delete `sif400.db` to reset the database
-3. **Port Conflicts**: Change ports in the configuration files if needed
-
-### Backend Logs
-
-Check the console output of the Python server for error messages and debugging information.
-
-### Frontend Debugging
-
-Use browser developer tools to check for network errors and console messages.
-
-## Future Enhancements
-
-- Integration with real SIF-400 hardware
-- Advanced analytics and machine learning
-- Mobile application
-- Multi-user support and authentication
-- Advanced alerting and notifications
-- Historical data export capabilities
+Operator-facing troubleshooting documentation lives in
+[frontend/public/issues/](frontend/public/issues/) (`issues.json` + images) — see its
+README for the format. The dashboard renders it directly; no code changes needed.

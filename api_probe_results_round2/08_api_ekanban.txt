@@ -1,0 +1,5 @@
+﻿URL: http://130.130.130.199/api/ekanban
+STATUS: 200
+CONTENT-TYPE: application/json; charset=utf-8
+BODY:
+{"Success":true,"Error":null,"Object":{"stations":[{"stationId":3,"lids_left":{"charger_1":{"type":"round","left":8},"charger_2":{"type":"square","left":9}}}]}}

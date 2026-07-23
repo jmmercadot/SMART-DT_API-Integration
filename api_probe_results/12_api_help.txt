@@ -1,0 +1,302 @@
+﻿URL: http://130.130.130.199/api/help
+STATUS: 200
+CONTENT-TYPE: text/html; charset=utf-8
+HEADERS:
+
+Key                 Value                        
+---                 -----                        
+X-AspNetMvc-Version 5.2                          
+Content-Length      11413                        
+Cache-Control       private                      
+Content-Type        text/html; charset=utf-8     
+Date                Wed, 15 Jul 2026 19:48:35 GMT
+Server              Microsoft-IIS/10.0           
+X-AspNet-Version    4.0.30319                    
+X-Powered-By        ASP.NET                      
+
+
+
+BODY:
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>SIFMES-400 Api HELP</title>
+    <link href="/api/Content/css?v=fWfq8TKPOT-DkoDbhxC8wzp5kHg693IlGmL9So4mB8s1" rel="stylesheet"/>
+
+    <script src="/api/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/api/Content/img/Favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/api/Content/img/Favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/api/Content/img/Favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/api/Content/img/Favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/api/Content/img/Favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/api/Content/img/Favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/api/Content/img/Favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/api/Content/img/Favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/api/Content/img/Favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/api/Content/img/Favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/api/Content/img/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/api/Content/img/Favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/api/Content/img/Favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/api/Content/img/Favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/api/">SIFMES-400</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/api/Help">API</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        
+
+<link type="text/css" href="/api/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>SIFMES-400 Api HELP</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <h2>Introduction</h2>
+            <p>This is SIFMES-400 Api application. This API is used by some functionalities of SIFMES Delivery application and SIFMES-400 Web.</p>
+            <p>This API can be also used for third party applications.</p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+
+
+<h2 id="MovService">MovService</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-MovService_option">GET MovService?option={option}</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/movService?option=[Start/Stop/Restart]<br />
+            Allows to start, stop or restart MovService application.<br />
+            MovService has to be located on C:/MovService/SIFMES400.MovService.exe
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Checker">Checker</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-Checker">GET Checker</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/checker<br />
+            Useful to know if the client has a connection to the API or not.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="SignatureImage">SignatureImage</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-SignatureImage_code">GET SignatureImage?code={code}</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/signatureImage?code=123456789012345<br />
+            Allows to get the signature image made by the SIFMES Delivery application.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="PerformanceAnalytics">PerformanceAnalytics</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-PerformanceAnalytics_paOption_from_to">GET PerformanceAnalytics?paOption={paOption}&amp;from={from}&amp;to={to}</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/performanceAnalytics?paOption=AirAndEnergy&amp;from=03/16/2023&amp;to=03/30/2023<br />
+            Allows to get the information displayed in the SIFMES-400 Performance Analytics dashboards.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Inventory">Inventory</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-Inventory">GET Inventory</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/Inventory<br />
+            Allows to get the inventory of SIF-400 system. The following information is included for each station:<br />
+            SIF-401: Presence flag, minimum flag and container type for each container loader. Minimum flag, presence flag and loader position for pallet loader.<br />
+            SIF-402: Hopper presence flag, minimum flag and color type for each hopper.<br />
+            SIF-403: Minimum flag and maximum flag for water and oil tanks.<br />
+            SIF-404: Minimum flag and container type for each line.<br />
+            SIF-405: Count of caps and cap type for each feeder.<br />
+            SIF-408: Count of packs.<br />
+            SIF-410: Minimum flag of pack pallets.<br />
+            SIF-412: Count of pack pallets inside each dock.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="DeliveryNote">DeliveryNote</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-DeliveryNote_nfc_rfid">GET DeliveryNote?nfc={nfc}&amp;rfid={rfid}</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/deliveryNote?nfc=123456789012345<br />
+            Allows to get the delivery note of a product delivered from station SIF-407 or SIF-412.
+            </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/POST-DeliveryNote">POST DeliveryNote</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/deliveryNote<br />
+            [POST param1: Option=NFC/RFID, param2: NFCId=1234567890123456, param3: RFIDId=1234567890ABCDEF, param4: Signature=base64Image]<br />
+            Allows to send the image of the signature made for the delivery of a specific product.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="WarehouseStatus">WarehouseStatus</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-WarehouseStatus_stationTypeId">GET WarehouseStatus?stationTypeId={stationTypeId}</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/warehouseStatus?stationTypeId=406<br />
+            Allows to get all the information related to a warehouse station.
+            </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/POST-WarehouseStatus">POST WarehouseStatus</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/warehouseStatus<br />
+            [POST param1: Location, param2: SKU]<br />
+            Allows to add a new product inside the warehouse, or update a stored one.
+            </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/DELETE-WarehouseStatus">DELETE WarehouseStatus</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/warehouseStatus<br />
+            [DELETE param1: SKUID=1]<br />
+            Allows to delete a stored product from the warehouse.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Ekanban">Ekanban</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-Ekanban">GET Ekanban</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/ekanban<br />
+            Allows to get the number of remaining caps in station SIF-405.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="DatabaseConnection">DatabaseConnection</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/api/Help/Api/GET-DatabaseConnection">GET DatabaseConnection</a></td>
+            <td class="api-documentation">
+                <p>
+            URI example: /api/databaseConnection<br />
+            Allows the API to refresh the database in use. This is useful when starting or finishing Educational Exercises.
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>    </section>
+</div>
+
+        <hr />
+        <footer>
+            <p>&copy; 2026 - SIFMES-400 Api</p>
+        </footer>
+    </div>
+
+    <script src="/api/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+
+    <script src="/api/bundles/bootstrap?v=a0JlrK3HWJYO4CANWtnjZQ6r-FHTgFewh3ItuNGmfr41"></script>
+
+    
+</body>
+</html>
+

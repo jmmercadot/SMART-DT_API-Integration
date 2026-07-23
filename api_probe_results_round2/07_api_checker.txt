@@ -1,0 +1,5 @@
+﻿URL: http://130.130.130.199/api/checker
+STATUS: 200
+CONTENT-TYPE: application/json; charset=utf-8
+BODY:
+{"Success":true,"Error":null,"Object":null}
